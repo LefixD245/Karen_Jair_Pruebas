@@ -95,16 +95,23 @@ button {
   cursor: pointer;
   font-size: 16px;
 }
-button2 {
+
+.btn-rosa {
+  display: inline-block;
   margin-top: 20px;
   padding: 12px 24px;
   background: linear-gradient(45deg, #ff4ed9, #ff9fda);
-  border: none;
   border-radius: 30px;
   color: white;
-  cursor: pointer;
   font-size: 16px;
+  text-decoration: none; /* 🔥 quita el subrayado */
 }
+
+.btn-rosa:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
 .reglas {
   margin-top: 20px;
   max-width: 350px; /* más compacto */
@@ -294,7 +301,7 @@ button2 {
   <div class="reglas">
     
     <div class="regla fade-in">
-      <img src="./icons/money.png" alt="">
+      <img src="./icons/Money.png" alt="">
       <span>Sobre</span>
     </div>
 
@@ -303,8 +310,10 @@ button2 {
       <span>Mesa de regalos Liverpool</span>
     </div>
 
-     <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51976580" target="_blank">
-    <button2>Ver Mesa de Regalos </button2>
+     <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51976580" target="_blank" class="btn-rosa">
+  Ver Mesa de Regalos
+</a>
+    
   </a>
 
   </div>
