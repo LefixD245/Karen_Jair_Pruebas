@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karen & Jair</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ===== CONTENIDO ===== */
+#contenido {
+  display: block;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* ===== SECCIONES ===== */
+.section {
+  position: relative;
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.section * {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+.countdown {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.box {
+  background: rgba(255,255,255,0.15);
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 70px;
+}
+
+.box span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #ff4e50, #f9d423);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+button2 {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #ff4ed9, #ff9fda);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+.reglas {
+  margin-top: 20px;
+  max-width: 350px; /* más compacto */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 🔥 espacio entre cada regla */
+}
+
+.regla {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  gap: 15px;
+
+  background: rgba(255,255,255,0.08);
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.regla img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.regla span {
+  text-align: left;
+  line-height: 1.4;
+}
+  /* Media query del contador */
+@media (max-width: 600px) {
+  .box {
+    padding: 10px;
+    min-width: 55px;
+  }
+
+  .box span {
+    font-size: 16px;
+  }
+
+  .countdown {
+    gap: 5px;
+  }
+}
+
+/* Media query para títulos */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+  @media (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+.imagen-info {
+  margin-top: 20px;
+  width: 90%;
+  max-width: 400px; /* 🔥 controla el tamaño en PC */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="contenido">
+
+<section class="section" style="background-image: url('./fotos/foto-01.jpg');">
+  <h1>Karen & Jair</h1>
+  <h2>Estás invitado a nuestro día especial</h2>
+</section>
+
+<section class="section" style="background-image: url('./fotos/foto-02.jpg');">
+  <h1>Cuenta regresiva</h1>
+  <div class="countdown fade-in">
+    <div class="box"><span id="d"></span>Días</div>
+    <div class="box"><span id="h"></span>Horas</div>
+    <div class="box"><span id="m"></span>Min</div>
+    <div class="box"><span id="s"></span>Seg</div>
+  </div>
+  <p style="max-width:500px;">
+    ¡El 7 de Mayo del 2026 será nuestro gran día!
+  </p>
+</section>
+
+<section class="section" style="background-image: url('./fotos/foto-03.jpg');">
+  <h1>Un momento especial</h1>
+  <p style="max-width:500px;">
+    Acompáñanos a celebrar este momento único lleno de alegría y recuerdos inolvidables.
+  </p>
+</section>
+
+<section class="section" style="background-image: url('./fotos/itinerario.png');">
+</section>
+
+<section class="section" style="background-image: url('./fotos/foto-04.jpg');">
+  <h1>Recepción</h1>
+  <p style="max-width:500px;">
+    Te esperamos en punto de las 6:00 pm en recinto "La mora Jardín" 
+  </p>
+  <img src="./fotos/salon.png" class="imagen-info fade-in" alt="Mapa ubicación">
+  <p style="max-width:500px;">
+    Ubicado en "Nueva Vizcaya 1640, El Capitán, 25900 Ramos Arizpe, Coah."
+  </p>
+   <a href="https://maps.app.goo.gl/KgaRgsyWLKJUpngC9" target="_blank">
+    <button>Ver en Maps</button>
+  </a>
+</section>
+
+<section class="section" style="background-image: url('./fotos/foto-05.jpg');">
+  <h1>Hospedaje recomendado</h1>
+   <p style="max-width:500px;">
+    Sabemos que algunos invitados vienen de muy lejos, te recomendamos el Hotel Holiday Inn Express para hospedarte. 
+  </p>
+  <img src="./fotos/hotel.png" class="imagen-info fade-in" alt="Mapa ubicación">
+  <p style="max-width:500px;">
+    Unicado en Carr. Monterrey - Saltillo 6580, Jardines Coloniales, 25270 Saltillo, Coah. 
+  </p>
+    <a href="https://maps.app.goo.gl/nBj2bv8sTouuYDXc9" target="_blank">
+    <button>Ver en Maps</button>
+  </a>
+</section>
+
+<section class="section" style="background-image: url('./fotos/foto-06.jpg');">
+  <h1>Codigo de Vestimenta</h1> 
+
+  <p style="max-width:500px;">
+    La elegancia define nuestro momento especial. Código de vestimenta formal.
+  </p>
+
+  <div class="reglas">
+    
+    <div class="regla fade-in">
+      <img src="./icons/gorra.png" alt="">
+      <span>No gorras</span>
+    </div>
+
+    <div class="regla fade-in">
+      <img src="./icons/tenis.png" alt="">
+      <span>No tenis</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="background-image: url('./fotos/foto-07.jpg');">
+  <h1>Restricciones</h1> 
+
+  <p style="max-width:500px;">
+    Es un día importante y queremos que lo disfrutes y te diviertas
+  </p>
+
+  <div class="reglas">
+    
+    <div class="regla fade-in">
+      <img src="./icons/ninios.png" alt="">
+      <span>No niños menores de 10 años</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="background-image: url('./fotos/foto-08.jpg');">
+  <h1>Mesa de regalos</h1> 
+
+  <p style="max-width:500px;">
+    Agradecemos tus buenos deseos. Te dejamos preferencias de regalos
+  </p>
+
+  <div class="reglas">
+    
+    <div class="regla fade-in">
+      <img src="./icons/Money.png" alt="">
+      <span>Sobre</span>
+    </div>
+
+     <div class="regla fade-in">
+      <img src="./icons/liverpool.png" alt="">
+      <span>Mesa de regalos Liverpool</span>
+    </div>
+
+     <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51976580" target="_blank">
+    <button2>Ver Mesa de Regalos </button2>
+  </a>
+
+  </div>
+</section>
+
+<section class="section" style="background-image: url('./fotos/foto-09.jpg');">
+  <h1>Confirma tu asistencia</h1>
+
+  <form id="rsvpForm">
+    <input type="text" id="nombre" placeholder="Tu nombre" required><br><br>
+    <input type="tel" id="telefono" placeholder="Número de teléfono" required><br><br>
+    <input type="number" id="personas" placeholder="¿Cuántas personas?" required><br><br>
+
+    <select id="asistencia">
+      <option value="si">Sí asistiré</option>
+      <option value="no">No asistiré</option>
+    </select><br><br>
+
+    <button type="submit">Confirmar</button>
+  </form>
+
+</section>
+
+</div>
+
+<script>
+
+const fecha = new Date("2026-05-07T06:30:00").getTime();
+
+setInterval(() => {
+  let now = new Date().getTime();
+  let diff = fecha - now;
+
+  document.getElementById("d").innerText = Math.floor(diff / (1000*60*60*24));
+  document.getElementById("h").innerText = Math.floor((diff / (1000*60*60)) % 24);
+  document.getElementById("m").innerText = Math.floor((diff / (1000*60)) % 60);
+  document.getElementById("s").innerText = Math.floor((diff / 1000) % 60);
+}, 1000);
+
+const elementos = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+elementos.forEach(el => observer.observe(el));
+
+
+</script>
+
+<!-- 🔥 FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD0MGJqr4P9tTa8kzixdjB3tZAffZag9Vo",
+  authDomain: "invitaciones-prueba-8b345.firebaseapp.com",
+  projectId: "invitaciones-prueba-8b345",
+  storageBucket: "invitaciones-prueba-8b345.firebasestorage.app",
+  messagingSenderId: "803960207702",
+  appId: "1:803960207702:web:f23e70f87798c0e1097ef7"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const form = document.getElementById("rsvpForm");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  await addDoc(collection(db, "invitados"), {
+    nombre: document.getElementById("nombre").value,
+    telefono: document.getElementById("telefono").value,
+    personas: document.getElementById("personas").value,
+    asistencia: document.getElementById("asistencia").value,
+    fecha: new Date()
+  });
+
+  alert("Confirmación enviada. ¡Gracias! ❤️");
+});
+</script>
+
+</body>
+</html>
