@@ -144,6 +144,14 @@ button {
   text-align: left;
   line-height: 1.4;
 }
+  .regla a img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.regla a img:hover {
+  transform: scale(1.1);
+}
   /* Media query del contador */
 @media (max-width: 600px) {
   .box {
@@ -305,15 +313,12 @@ button {
       <span>Sobre</span>
     </div>
 
-     <div class="regla fade-in">
-      <img src="./icons/liverpool.png" alt="">
-      <span>Mesa de regalos Liverpool</span>
-    </div>
-
-     <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51976580" target="_blank" class="btn-rosa">
-  Ver Mesa de Regalos
-</a>
-    
+<div class="regla fade-in">
+  <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51976580" target="_blank">
+    <img src="./icons/liverpool.png" alt="">
+  </a>
+  <span>Mesa de regalos Liverpool</span>
+</div>  
   </a>
 
   </div>
