@@ -230,6 +230,71 @@ button {
   font-size: 16px;
   letter-spacing: 1px;
 }
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000; /* o el color que quieras */
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Todos centrados al inicio */
+#intro img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Tamaños (ajusta a tu gusto) */
+#sobre {
+  width: 280px;
+  z-index: 2;
+}
+
+#triangulo {
+  width: 280px;
+  z-index: 1;
+}
+
+#sello {
+  width: 100px;
+  z-index: 3;
+}
+
+/* 🔥 ANIMACIONES */
+.sello-out {
+  animation: selloBaja 0.8s ease forwards;
+}
+
+@keyframes selloBaja {
+  to {
+    transform: translate(-50%, 150vh);
+  }
+}
+
+.triangulo-out {
+  animation: triIzq 1s ease forwards;
+}
+
+@keyframes triIzq {
+  to {
+    transform: translate(-150vw, -50%);
+  }
+}
+
+.sobre-out {
+  animation: sobreDer 1s ease forwards;
+}
+
+@keyframes sobreDer {
+  to {
+    transform: translate(150vw, -50%);
+  }
+}
 
 </style>
 </head>
@@ -450,5 +515,46 @@ form.addEventListener("submit", async (e) => {
 });
 </script>
 
+<script>
+const intro = document.getElementById("intro");
+const sello = document.getElementById("sello");
+const triangulo = document.getElementById("triangulo");
+const sobre = document.getElementById("sobre");
+
+/* bloquear scroll al inicio */
+document.body.style.overflow = "hidden";
+
+intro.addEventListener("click", () => {
+
+  /* 1. baja el sello */
+  sello.classList.add("sello-out");
+
+  setTimeout(() => {
+
+    /* 2. salen triangulo y sobre */
+    triangulo.classList.add("triangulo-out");
+    sobre.classList.add("sobre-out");
+
+  }, 700);
+
+  setTimeout(() => {
+
+    /* 3. desaparece intro */
+    intro.style.display = "none";
+    document.body.style.overflow = "auto";
+
+  }, 1700);
+
+});
+</script>
+
 </body>
+
+<div id="intro">
+
+  <img src="./elementos/sobre/sobre.png" id="sobre">
+  <img src="./elementos/sobre/Triangulo_01.png" id="triangulo">
+  <img src="./elementos/sobre/sello.png" id="sello">
+
+</div>
 </html>
