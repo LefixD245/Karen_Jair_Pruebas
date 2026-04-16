@@ -519,34 +519,30 @@ form.addEventListener("submit", async (e) => {
 </script>
 
 <script>
-const intro = document.getElementById("intro");
-const sello = document.getElementById("sello");
-const triangulo = document.getElementById("triangulo");
-const sobre = document.getElementById("sobre");
+document.addEventListener("DOMContentLoaded", () => {
 
-/* bloquear scroll al inicio */
-document.body.style.overflow = "hidden";
+  const intro = document.getElementById("intro");
+  const sello = document.getElementById("sello");
+  const triangulo = document.getElementById("triangulo");
+  const sobre = document.getElementById("sobre");
 
-intro.addEventListener("click", () => {
+  document.body.style.overflow = "hidden";
 
-  /* 1. baja el sello */
-  sello.classList.add("sello-out");
+  intro.addEventListener("click", () => {
 
-  setTimeout(() => {
+    sello.classList.add("sello-out");
 
-    /* 2. salen triangulo y sobre */
-    triangulo.classList.add("triangulo-out");
-    sobre.classList.add("sobre-out");
+    setTimeout(() => {
+      triangulo.classList.add("triangulo-out");
+      sobre.classList.add("sobre-out");
+    }, 700);
 
-  }, 700);
+    setTimeout(() => {
+      intro.style.display = "none";
+      document.body.style.overflow = "auto";
+    }, 1700);
 
-  setTimeout(() => {
-
-    /* 3. desaparece intro */
-    intro.style.display = "none";
-    document.body.style.overflow = "auto";
-
-  }, 1700);
+  });
 
 });
 </script>
