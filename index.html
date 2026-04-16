@@ -13,6 +13,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: white;
   overflow-x: hidden;
+  background: #f5f1eb;
 }
 
 /* ===== CONTENIDO ===== */
@@ -266,6 +267,14 @@ button {
   z-index: 13;
   width: 100%;
 
+}
+  .fade-out {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 /* 🔥 ANIMACIONES */
@@ -537,11 +546,18 @@ document.addEventListener("DOMContentLoaded", () => {
       sobre.classList.add("sobre-out");
     }, 700);
 
-    setTimeout(() => {
-      intro.style.display = "none";
-      document.body.style.overflow = "auto";
-    }, 1700);
+setTimeout(() => {
 
+  intro.classList.add("fade-out");
+
+}, 1500);
+
+setTimeout(() => {
+
+  intro.style.display = "none";
+  document.body.style.overflow = "auto";
+
+}, 2300);
   });
 
 });
